@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  rag-api:
+    build: .
+    ports:
+      - '8000:8000'
+    environment:
+      - API_KEY=${API_KEY}
+      - HOST=${HOST}
+      - PORT=${PORT}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - ALLOWED_METHODS=${ALLOWED_METHODS}
+      - ALLOWED_HEADERS=${ALLOWED_HEADERS}
+      - PDF_URL=${PDF_URL}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL}
+      - CHROMA_DB_DIR=${CHROMA_DB_DIR}
+      - CHUNK_SIZE=${CHUNK_SIZE}
+      - CHUNK_OVERLAP=${CHUNK_OVERLAP}
+      - LLM_MODEL_NAME=${LLM_MODEL_NAME}
+      - TEMPERATURE=${TEMPERATURE}
+      - NUM_PREDICT=${NUM_PREDICT}
+      - RETRIEVER_K=${RETRIEVER_K}
+      - DEFAULT_LANGUAGE=${DEFAULT_LANGUAGE}
+    volumes:
+      - ./danfoss_db:/app/danfoss_db # Persist the vector database
