@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Depends, Header
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 import os
-from basic_rag import RAGSystem
+from rag import RAGSystem
 from dotenv import load_dotenv
 
 # Load environment variables
