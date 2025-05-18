@@ -12,7 +12,8 @@ app = FastAPI(title="Danfoss RAG API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.getenv("ALLOWED_ORIGINS", "*").split(","),
+    allow_origins=allowed_origins,
+    allow_credentials=True,
     allow_methods=os.getenv("ALLOWED_METHODS", "POST").split(","),
     allow_headers=os.getenv("ALLOWED_HEADERS", "*").split(","),
 )
