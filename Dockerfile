@@ -29,7 +29,7 @@ WORKDIR /app
 COPY . .
 
 # Download the Ollama model during build (optional)
-RUN python -c "from langchain_community.llms import Ollama; Ollama(model='mistral:7b-instruct-q4_K_M')"
+RUN python -c "from langchain_community.llms import Ollama; Ollama(model='phi3:mini')"
 
 # Expose port
 EXPOSE 8000

@@ -64,7 +64,7 @@ class LLMFactory:
     @staticmethod
     def create_llm() -> Ollama:
         return Ollama(
-            model=os.getenv("LLM_MODEL_NAME", "mistral:7b-instruct-q4_K_M"),
+            model=os.getenv("LLM_MODEL_NAME", "phi3:mini"),
             temperature=float(os.getenv("TEMPERATURE", "0.2")),
             num_predict=int(os.getenv("NUM_PREDICT", "2000")),
             verbose=False
